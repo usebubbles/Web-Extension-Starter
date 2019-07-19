@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "tslint.packageManager": "npm",
+  "editor.renderWhitespace": "none",
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.ts": "javascriptreact",
+    "*.tsx": "javascriptreact",
+  }
+}

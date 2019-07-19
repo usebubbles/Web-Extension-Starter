@@ -1,11 +1,10 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import styled, { ThemeProvider } from 'styled-components';
-import { IAppState } from '../../../background/store';
-import Counter from '../../../containers/Counter';
-import { themes, ThemeTypes } from '../../../components/styles/themes';
-
+import * as React from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import styled, { ThemeProvider } from "styled-components";
+import { IAppState } from "../../../background/store";
+import Counter from "../../../containers/Counter";
+import { themes, ThemeTypes } from "../../../components/styles/themes";
 
 interface ICounterApp {
     theme: ThemeTypes;
@@ -14,7 +13,7 @@ interface ICounterApp {
 
 class CounterApp extends React.Component<ICounterApp> {
 
-    render() {
+    public render() {
         return (
             <ThemeProvider theme={themes[this.props.theme]}>
                 <React.Fragment>
@@ -29,17 +28,19 @@ class CounterApp extends React.Component<ICounterApp> {
 
 const mapStateToProps = (state: IAppState) => {
     return {
-        theme: state.settings.theme
+        theme: state.settings.theme,
     };
 };
 
 export default connect(mapStateToProps)(CounterApp);
 
-const CounterAppContainer = styled('div')`
+const CounterAppContainer = styled("div")`
     position: fixed;
     z-index: 9;
     bottom: 0;
     right: 0;
-    background-color: ${p => p.theme.backgroundColor};
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: ${(p) => p.theme.backgroundColor};
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;

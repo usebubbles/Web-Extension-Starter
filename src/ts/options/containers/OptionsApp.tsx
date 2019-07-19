@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import styled, { ThemeProvider } from 'styled-components';
-import { IAppState } from '../../background/store';
-import Counter from '../../containers/Counter';
-import GlobalStyle from '../../components/styles/GlobalStyle';
-import { themes, ThemeTypes } from '../../components/styles/themes';
+import * as React from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import styled, { ThemeProvider } from "styled-components";
+import { IAppState } from "../../background/store";
+import Counter from "../../containers/Counter";
+import GlobalStyle from "../../components/styles/GlobalStyle";
+import { themes, ThemeTypes } from "../../components/styles/themes";
 
 interface IOptionsApp {
     theme: ThemeTypes;
@@ -13,8 +13,8 @@ interface IOptionsApp {
 }
 
 class OptionsApp extends React.Component<IOptionsApp> {
-   
-    render() {
+
+    public render() {
         return (
             <ThemeProvider theme={themes[this.props.theme]}>
                 <React.Fragment>
@@ -30,23 +30,25 @@ class OptionsApp extends React.Component<IOptionsApp> {
 
 const mapStateToProps = (state: IAppState) => {
     return {
-        theme: state.settings.theme
+        theme: state.settings.theme,
     };
 };
 
 export default connect(mapStateToProps)(OptionsApp);
 
-const OptionsAppContainer = styled('div')`
+const OptionsAppContainer = styled("div")`
     position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: center;
     justify-items: center;
-    align-items: center;  
+    align-items: center;
     height: 90vh;
     width: 90vw;
     left: 5vw;
     top: 5vh;
-    background-color: ${p => p.theme.backgroundColor};
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: ${(p) => p.theme.backgroundColor};
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
