@@ -4,8 +4,9 @@
   "tslint.packageManager": "npm",
   "editor.renderWhitespace": "none",
   "files.associations": {
-    "*.js": "javascriptreact",
-    "*.ts": "javascriptreact",
-    "*.tsx": "javascriptreact",
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
   }
 }
