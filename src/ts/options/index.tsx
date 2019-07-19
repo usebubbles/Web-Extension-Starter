@@ -11,9 +11,10 @@ const store = new Store({
 });
 
 store.ready().then(() => {
-    ReactDOM.render(
-        <Provider store={store}>
-            <OptionsApp />
-        </Provider>
-        , document.getElementById("options-root"));
+  ReactDOM.render(
+    <Provider store={store}>
+        <OptionsApp />
+    </Provider>,
+    document.getElementById("options-root"),
+  );
 });
